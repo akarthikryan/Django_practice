@@ -7,7 +7,7 @@ class Department(models.Model):
     
     
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.location}"
 
 class Employee(models.Model):
     first_name = models.CharField(max_length=50)
