@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django Employee Directory</title>
+  </head>
+  <style>
+    /* Responsive Wrapper */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    /* Base Table Styling */
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+      background-color: #ffffff;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    /* Header Styling */
+    .styled-table thead tr {
+      background-color: #2563eb;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Cell Padding */
+    .styled-table th,
+    .styled-table td {
+      padding: 14px 18px;
+    }
+
+    /* Row Borders & Zebra Striping */
+    .styled-table tbody tr {
+      border-bottom: 1px solid #e5e7eb;
+      transition: background-color 0.2s ease;
+    }
+
+    .styled-table tbody tr:nth-of-type(even) {
+      background-color: #f9fafb;
+    }
+
+    /* Hover State */
+    .styled-table tbody tr:hover {
+      background-color: #eff6ff;
+    }
+
+    /* Bottom Accent Border */
+    .styled-table tbody tr:last-of-type {
+      border-bottom: 2px solid #2563eb;
+    }
+
+    /* Optional Status Badge */
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background-color: #dcfce7;
+      color: #166534;
+    }
+  </style>
+  <body>
+    <h2 style="text-align: center;">Employee Directory</h2>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Designation</th>
+                <th>Salary</th>
+                <th>Joining Date</th>
+                <th>Active?</th>
+                <th>Department</th>
+                <th>Manager</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in employees %}
+            <tr>
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.full_name }}</td>
+                <td>{{ emp.email }}</td>
+                <td>{{ emp.designation }}</td>
+                <td>{{ emp.salary }}</td>
+                <td>{{ emp.joining_date }}</td>
+                <td><span class="badge">{{ emp.is_active }}</span></td>
+                <td>{{ emp.department }}</td>
+                <td>{{ emp.manager }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </body>
+</html>
