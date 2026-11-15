@@ -1,0 +1,9 @@
+from django.http import HttpResponse
+from employees.models import Employee
+from django.shortcuts import render
+
+def home(request):
+    # Fetch the data from the employee table
+    employees = Employee.objects.all()
+    print(employees)
+    return render(employees)
