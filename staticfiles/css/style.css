@@ -1,0 +1,63 @@
+ <style>
+    /* Responsive Wrapper */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    /* Base Table Styling */
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+      background-color: #ffffff;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    /* Header Styling */
+    .styled-table thead tr {
+      background-color: #2563eb;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Cell Padding */
+    .styled-table th,
+    .styled-table td {
+      padding: 14px 18px;
+    }
+
+    /* Row Borders & Zebra Striping */
+    .styled-table tbody tr {
+      border-bottom: 1px solid #e5e7eb;
+      transition: background-color 0.2s ease;
+    }
+
+    .styled-table tbody tr:nth-of-type(even) {
+      background-color: #f9fafb;
+    }
+
+    /* Hover State */
+    .styled-table tbody tr:hover {
+      background-color: #eff6ff;
+    }
+
+    /* Bottom Accent Border */
+    .styled-table tbody tr:last-of-type {
+      border-bottom: 2px solid #2563eb;
+    }
+
+    /* Optional Status Badge */
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background-color: #dcfce7;
+      color: #166534;
+    }
+  </style>
