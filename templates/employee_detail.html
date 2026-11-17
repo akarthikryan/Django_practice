@@ -13,6 +13,7 @@
  
   <body>
     <h2 style="text-align: center;">Employee Directory - {{ employee.full_name }}</h2>
+    <img src="{{ employee.image.url }}" alt="{{ employee.first_name}}Image" width="200">
     <p>Email: {{ employee.email }}</p>
     <p>Designation: {{ employee.designation }}</p>
     <p>Salary: {{ employee.salary }}</p>
