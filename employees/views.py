@@ -74,12 +74,21 @@ def edit_employee(request, id):
 
 
 # Delete employee
+
 def delete_employee(request, id):
+    # print("========== DELETE DEBUG ==========")
+    # print("Request method:", request.method)
+    # print("Employee ID:", id)
 
     employee = get_object_or_404(Employee, id=id)
 
     if request.method == 'POST':
         employee.delete()
+
+        # print("Deleted employee:", employee.full_name)
+        # print("Remaining employees:", Employee.objects.count())
+
         return redirect('employee_list')
 
-    return redirect('delete_employee', id=employee.id)
+    print("Invalid request method")
+    return redirect('employee_list')
