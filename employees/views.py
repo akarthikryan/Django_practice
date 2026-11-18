@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Employee
+from .forms import EmployeeForm
 
 # Decided which url pattern to create
 # Created URL pattern in the main urls.py and forwarded it to employees.urls
@@ -16,4 +17,14 @@ def employee_detail(request, id):
 
 
 def add_employee(request):
-    return render(request, 'add_employee.html')
+    if request.method == 'POST':
+        form = EmployeeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+        else:
+            print(form.errors)
+    form = EmployeeForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'add_employee.html',context)
