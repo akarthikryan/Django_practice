@@ -13,3 +13,7 @@ def employee_detail(request, id):
         'employee': employee,
     }
     return render(request, 'employee_detail.html', context)
+
+
+def add_employee(request):
+    return render(request, 'add_employee.html')
