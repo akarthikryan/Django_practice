@@ -16,6 +16,9 @@ def register(request):
 
 
 def login(request):
+    if request.user.is_authenticated:
+        print("The user is already logged in")
+        return redirect('employee_list')
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():

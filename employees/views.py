@@ -1,8 +1,7 @@
-
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Employee
 from .forms import EmployeeForm
-
+from django.contrib.auth.decorators import login_required
 
 # Display all employees
 def employee_list(request):
@@ -25,7 +24,7 @@ def employee_detail(request, id):
 
     return render(request, 'employee_detail.html', context)
 
-
+@login_required
 # Add new employee
 def add_employee(request):
 
