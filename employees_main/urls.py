@@ -20,6 +20,8 @@ from django.urls import path, include
 from . import views
 from django.conf.urls.static import static
 from accounts import views as AccountsViews
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
@@ -27,6 +29,7 @@ urlpatterns = [
     
     path('register/', AccountsViews.register,name='register'),
     path('login/', AccountsViews.login, name='login'),
+    path('logout/', AccountsViews.logout, name='logout')
 ]
 
 

@@ -17,7 +17,7 @@
     <a href="{% url 'register' %}" class="text-center">Register</a>
     {% else %}
     You are logged in as: {{ user }}
-    <a href="">Logout</a>
+    <a href="{% url 'logout' %}">Logout</a>
     {% endif %}
 
     <h2 style="text-align: center;">Employee Directory</h2>
